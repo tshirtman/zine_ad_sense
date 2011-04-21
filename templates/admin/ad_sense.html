@@ -1,0 +1,30 @@
+{% extends "admin/layout.html" %}
+{% block title %}{{ _("Ad sense") }}{% endblock %}
+{% block contents %}
+<h2>{{ _("Ad sense") }}</h2>
+<p>{% trans %}
+{% endtrans %}</p>
+<div>
+    <form method="GET" action="">
+        <table>
+            <tr>
+                <td><label for="client_code">client code</label></td>
+                <td><input id="client_code" name="client_code" value="{{ client_code }}"></input></td>
+            </tr>
+            <tr>
+                <td><label for="banner_slot">banner slot</label></td>
+                <td><input id="banner_slot" name="banner_slot" value="{{ banner_slot }}"></input></td>
+            </tr>
+            <tr>
+                <td><label for="width">width</label></td>
+                <td><input id="width" name="width" value="{{ width }}"></input></td>
+            </tr>
+            <tr>
+                <td><label for="height">height</label></td>
+                <td><input id="height" name="height" value="{{ height }}"></input><br /></td>
+            </tr>
+        </table>
+        <input type="submit"></input>
+    </form>
+</div>
+{% endblock %}

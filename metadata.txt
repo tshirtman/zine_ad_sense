@@ -1,0 +1,7 @@
+Name: Ad sense plugin
+Plugin URL:
+Author: gabriel Pettier
+Author URL: blob.tshirtman.fr
+License: GPL
+Version: 0.1
+Description: add a google add sense banner at end of posts, code configurable via interface
