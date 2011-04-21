@@ -1,0 +1,8 @@
+This is a simple zine plugin to add adsense banner at the bottom of your entries in the blog view
+
+the probability of a banner to be displayed at the end of the entry is
+currently 0.5 (to avoid making it too much, but that may become configurable in
+the future…
+
+there is an admin page to configure your banner (create it from your ad sense
+account first, obviously)
