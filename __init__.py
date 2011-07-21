@@ -78,6 +78,22 @@ def add_adsense_banner(post):
     else:
         return ''
 
+def insert_header_js(metadata):
+    metadata.append('''
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23430110-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+
+    </script>
+    ''')
 
 def setup(app, plugin):
     """This function is called by Zine in the application initialization
@@ -94,6 +110,7 @@ def setup(app, plugin):
     app.add_config_var('ad_sense/height', TextField(default=''))
 
     app.connect_event('modify-admin-navigation-bar', add_ad_sense_link)
+    app.connect_event('before-metadata-assembled', insert_header_js)
 
     # for the admin panel we add a url rule. Because it's an admin panel
     # page located in options we add such an url rule.
